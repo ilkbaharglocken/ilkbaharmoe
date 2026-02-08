@@ -7,12 +7,16 @@
     box-sizing: border-box;
 }
 
+html {
+    background-color: #000000 !important;
+}
+
 body, html {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
-    background-color: #000;
+    height: 100svh;
+    background-color: #000000;
     overflow: hidden;
 }
 
@@ -36,6 +40,7 @@ body {
     padding-left: 10vw; 
     position: relative;
     z-index: 10;
+    filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.8));
 }
 
 .flashing-text {
@@ -43,7 +48,7 @@ body {
     margin: 0;
     line-height: 1.1;
     text-transform: lowercase;
-    animation: glow-pulse 0.1s ease-in-out infinite;
+    animation: glow-pulse 0.4s ease-in-out infinite;
 }
 
 .sub-text {
@@ -73,14 +78,38 @@ body {
 }
 
 @keyframes glow-pulse {
-    0% { text-shadow: 0 0 5px #ffb7d5, 0 0 10px #ffb7d5; }
-    50% { text-shadow: 0 0 18px #ffb7d5, 0 0 30px #ff85b2; }
-    100% { text-shadow: 0 0 5px #ffb7d5, 0 0 10px #ffb7d5; }
+    0% { 
+        text-shadow: 0 0 5px #ffb7d5, 0 0 10px #ffb7d5; 
+    }
+    50% { 
+        text-shadow: 0 0 18px #ffb7d5, 0 0 30px #ff85b2; 
+    }
+    100% { 
+        text-shadow: 0 0 5px #ffb7d5, 0 0 10px #ffb7d5; 
+    }
 }
 
 @media (max-width: 600px) {
+    body {
+        background-size: contain;
+        background-position: bottom center;
+    }
+    
     .container {
         padding-top: 10vh;
         padding-left: 8vw;
+    }
+
+    .flashing-text {
+        font-size: 3rem;
+    }
+
+    .sub-text {
+        font-size: 1.6rem;
+    }
+
+    .third-text {
+        font-size: 1.2rem;
+        margin-top: 10px;
     }
 }
