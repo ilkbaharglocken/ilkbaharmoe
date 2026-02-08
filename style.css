@@ -48,7 +48,7 @@ body {
     margin: 0;
     line-height: 1.1;
     text-transform: lowercase;
-    animation: glow-pulse 0.4s ease-in-out infinite;
+    animation: glow-pulse 0.1s ease-in-out infinite;
 }
 
 .sub-text {
